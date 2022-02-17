@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Notify } from 'notiflix';
 
 const BASE_URL = 'https://pixabay.com/api/';
 
@@ -22,6 +21,7 @@ export default class PicsApiService {
       const parsedData = await axios.get(
         `${BASE_URL}?q=${this.searchQuery}&page=${this.page}&${options}`,
       );
+      this.totalCards = parsedData.data.totalHits;
       this.page += 1;
       return parsedData.data.hits;
     }

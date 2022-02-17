@@ -32,8 +32,10 @@ img {
   color: var(--secondary-color);
   background-color: var(--main-color);
   border-radius: 5px;
-  border: 1px solid #644b3c;
+  border: 1px solid lightyellow;
   line-height: 1.6;
+
+  transition: border 300ms linear;
 
   &:hover,
   &:focus {
